@@ -1,10 +1,14 @@
 # WarrantyCam.com site
 
-Public static site for WarrantyCam (privacy policy and store/OAuth links).
+Public site for WarrantyCam (privacy policy and store/OAuth links).
 
 **Live URL:** https://warrantycam.com/privacy/
 
-Hosted on **Cloudflare Pages** with the custom domain `warrantycam.com` (not GitHub Pages).
+Hosted on **Cloudflare Pages** with the custom domain `warrantycam.com`.
+
+## Issues
+
+File bugs and feedback in [Issues](https://github.com/gw1337x/Warranty-Cam-privacy/issues). This repo is for the public site and issue tracking only — the Android app source lives in a separate private repository.
 
 ## Content
 

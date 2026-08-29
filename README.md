@@ -1,7 +1,16 @@
-﻿# WarrantyCam privacy (GitHub Pages)
+# WarrantyCam.com site
 
-Public host for the WarrantyCam privacy policy. Source app repo stays private.
+Public static site for WarrantyCam (privacy policy and store/OAuth links).
 
-**Live URL:** https://gw1337x.github.io/Warranty-Cam-privacy/privacy/
+**Live URL:** https://warrantycam.com/privacy/
 
-Enable Pages: Settings → Pages → Deploy from branch → `master` / `/docs`.
+Hosted on **Cloudflare Pages** with the custom domain `warrantycam.com` (not GitHub Pages).
+
+## Content
+
+- `docs/index.html` — redirects to `/privacy/`
+- `docs/privacy/index.html` — privacy policy
+
+## Deploy
+
+Cloudflare Dashboard → Workers & Pages → project connected to this repo → build output directory `docs`.

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>WarrantyCam Privacy Policy</title>
-  <meta name="description" content="Privacy policy for WarrantyCam: job and capture data stay on your device and in your own cloud. The developer does not operate a backend that collects that content.">
+  <meta name="description" content="Privacy policy for WarrantyCam: a workshop's job and capture evidence is held in the Workshop Store the developer runs for the workshop, copied into the workshop's own Google Drive, with Google sign-in as the only identity.">
   <style>
     :root {
       --ink: #1a1f24;
@@ -69,16 +69,17 @@
   <main>
     <header>
       <h1>WarrantyCam Privacy Policy</h1>
+      <!-- Before merging this branch: set the effective date to the day it goes live. Merging publishes the page; there is no later moment to fix it. -->
       <p class="meta">Effective date: 29 August 2026 · App package: <code>com.warrantycam</code></p>
     </header>
 
     <div class="callout">
-      <strong>Core posture:</strong> WarrantyCam does not operate a developer backend that collects Job or Capture content. Your warranty evidence stays on your device and, if you choose Cloud Sync, in <em>your own</em> cloud account (for example Google Drive). The developer never receives that content through WarrantyCam’s servers — because there are none for Job data.
+      <strong>Core posture:</strong> a workshop’s warranty evidence is held in the <strong>Workshop Store</strong> — the server the developer runs for the workshop — and the server writes a copy into the workshop’s own Google Drive. It is no longer written into a technician’s personal Drive, and <strong>Google sign-in is the only identity</strong>: the App has no account of its own, and no Job or Capture records who added it.
     </div>
 
     <h2>1. Who we are</h2>
     <p>
-      WarrantyCam (“the App”) is an Android application for workshop technicians to capture, organise, and share warranty evidence for a Job (keyed by WIP). This policy explains what data is handled on your device, what third-party services you may connect, and what the developer does <em>not</em> collect.
+      WarrantyCam (“the App”) is an Android application for workshop technicians to capture, organise, and share warranty evidence for a Job (keyed by WIP). This policy explains what the App handles on your device, what the Workshop Store and the workshop’s Drive hold, who may open the workshop, and what the developer does <em>not</em> collect.
     </p>
     <p>
       Contact: <a href="mailto:support@warrantycam.com">support@warrantycam.com</a>
@@ -88,40 +89,49 @@
     <h2>2. What the App stores on your device</h2>
     <p>Depending on how you use the App, the following may be stored locally on your phone or tablet:</p>
     <ul>
-      <li><strong>Job metadata</strong> — for example WIP, registration, model, Chassis Code, recalls/fault notes, and related settings you enter.</li>
+      <li><strong>Job metadata</strong> — for example WIP, registration, model, Chassis Code, recalls/fault notes, and the related details you enter.</li>
       <li><strong>Captures</strong> — photos, videos, and imported files you attach as warranty evidence, including filenames and CaptureCategory.</li>
-      <li><strong>App preferences</strong> — Cloud Sync and Storage Destination choices, watermark and quality options, brand profiles, optional Pro entitlements mirrored from Play Billing, and similar settings.</li>
+      <li><strong>App preferences</strong> — Cloud Sync and Storage Destination choices, and the device’s own copy of the workshop’s shared settings (photo and video quality, custom models, saved recalls). The shared ones belong to the workshop, and section 3 says where they live; your theme belongs to the device that set it.</li>
+      <li><strong>A sign-in session</strong> — the token the store issued when you signed in with Google, kept in the App’s own storage on the device so a restart does not sign you out.</li>
       <li><strong>Optional biometric lock preference</strong> — a local on/off setting only. Biometric templates stay in the device OS; the App does not upload fingerprints, face data, or lock credentials.</li>
     </ul>
     <p>
-      You can delete Jobs and Captures in the App. Uninstalling the App removes local App data on that device; files already in your own cloud remain under your cloud account’s controls.
+      You can delete Jobs and Captures in the App. Uninstalling the App removes local App data on that device; what the workshop’s store and the workshop’s Drive hold belongs to the workshop, and is described below.
     </p>
 
-    <h2>3. Cloud Sync (your own cloud)</h2>
+    <h2>3. Where the workshop’s evidence lives</h2>
     <p>
-      If you enable Cloud Sync with Google Drive, Captures and Job metadata are uploaded to folders in <strong>your</strong> Google account. The App uses Google Sign-In / Drive APIs so the App can create and update those folders on your behalf. That content is not sent to a WarrantyCam server.
+      Cloud Sync writes a Job and its Captures to the <strong>Workshop Store</strong>: one server, with a database for Job and Capture records, the workshop’s settings, the membership list and sign-in sessions, and object storage for the Capture files themselves. Evidence bytes go from the phone straight to that storage over an upload link minted for one file, and are read back through a signed link that expires shortly after it is minted — so a link copied out of the App stops working soon after. The Web Companion reads the same store, which is how a claim can be checked at a desk.
+    </p>
+    <p>
+      Behind the store, the server also writes a copy of each Capture and of each Job’s details into <strong>the workshop’s own Google Drive</strong>. That copy is written after the store has accepted the evidence, never inside the request that asked for it, and no client of the App reads it back: it exists so the workshop’s Drive keeps a copy that can be opened by hand, and so a Drive link keeps working. The copy can lag behind the store, and it is a copy rather than a backup.
     </p>
     <ul>
-      <li><strong>Local Only</strong> — evidence can remain on-device with no cloud sign-in.</li>
+      <li><strong>Local Only</strong> — evidence can stay on the device with no sign-in at all: the App captures, organises and exports with no signal and no server. Work kept on the device while signed out drains to the workshop once you sign in.</li>
       <li><strong>Storage Destination</strong> — Cloud Only, Local Only, or Both controls whether files remain on the device after upload (independent of files that already live on a diagnostic tablet).</li>
-      <li><strong>Settings backup</strong> — optional sync of selected preferences (for example custom models or recall presets) into your connected cloud so another device signed into the same account can reuse them.</li>
-      <li><strong>OneDrive</strong> — may appear as “Coming soon” and is not a production Cloud Sync path in the current Play Store v1 scope.</li>
+      <li><strong>Workshop settings</strong> — custom models, generation codes, disabled models, saved recalls, and photo and video quality are the workshop’s: held once in the store and shared by everyone signed in, so a new phone gets them back and two phones are not configuring two different workshops.</li>
     </ul>
     <p>
-      Your use of Google Drive (or any future cloud provider) is also governed by that provider’s own terms and privacy policy.
+      The workshop’s use of Google Drive is also governed by Google’s own terms and privacy policy.
     </p>
 
-    <h2>4. Sharing and Warranty Hub Submission</h2>
+    <h2>4. Signing in, and who may open the workshop</h2>
     <p>
-      When you use Warranty Hub Submission or other share actions, the App opens the Android system share sheet with your Evidence Package and a short WIP/registration summary. You choose the destination (for example Microsoft Teams or email). The developer does not intermediary that handoff.
+      Google sign-in is the only door. The App sends the Google identity it receives to the store, which checks it and then checks it against the workshop’s membership list — one row per person, a Google ID and a label only the owner reads. The store holds no WarrantyCam account, no password and no email address for you. It keeps its own session instead: thirty days, sliding as you use it, with only a hash of the token stored. Signing out ends it. If the owner removes your membership, your next sign-in is refused; deleting the sessions that membership had opened ends the phones already signed in with them.
     </p>
     <p>
-      Drive Link Share (when available) copies or sends the URL of the Job’s folder in <em>your</em> Google Drive. Colleagues who open that link access content according to your Drive sharing permissions — not through WarrantyCam servers.
+      If the workshop has not added you, the App is refused and shows your own Google ID so the owner can paste it into a row. The Web Companion in the browser uses the same door.
+    </p>
+    <p>
+      No Job and no Capture records who added it. Membership decides who may open the workshop; it is not an audit trail, and there is no owner column to search.
     </p>
 
-    <h2>5. Purchases (Pro)</h2>
+    <h2>5. Sharing and Warranty Hub Submission</h2>
     <p>
-      Optional Pro features are sold as a monthly subscription through Google Play Billing. Payment details are processed by Google; the App receives entitlement status so it can unlock Pro features. The developer does not receive your full payment card details through the App.
+      When you use Warranty Hub Submission or another share action, the App opens the Android system share sheet with your Evidence Package and a short WIP/registration summary. You choose the destination (for example Microsoft Teams or email). The developer does not stand between you and that handoff.
+    </p>
+    <p>
+      Drive Link Share copies or sends the URL of the Job’s folder in the workshop’s Drive. That folder was written by the server; who may open the link is decided by that Drive’s sharing settings, not by WarrantyCam.
     </p>
 
     <h2>6. Permissions the App may request</h2>
@@ -130,36 +140,66 @@
       <li><strong>Microphone</strong> — when recording video with audio.</li>
       <li><strong>Photos / media / storage</strong> — to save or import Captures when local storage is used.</li>
       <li><strong>Biometric / device credential</strong> — only if you enable optional local app lock.</li>
-      <li><strong>Network</strong> — for Cloud Sync, Play Billing entitlement checks, and opening links you choose.</li>
-    </ul>
-    <p>Permissions are used for the features above, not to feed a developer analytics backend with Job content.</p>
-
-    <h2>7. What we do not collect</h2>
-    <ul>
-      <li>We do not run a WarrantyCam backend that receives or stores Job cards, Captures, VIN/registration evidence, or Evidence Packages.</li>
-      <li>We do not sell Job or Capture content.</li>
-      <li>Optional biometric lock is device-local security only; it is not cloud collection.</li>
+      <li><strong>Network</strong> — for Cloud Sync, opening links you choose, and the Google sign-in above.</li>
     </ul>
     <p>
-      If this posture changes in a future version (for example a developer-operated sync service), this policy will be updated before that behaviour ships, and the in-app Privacy Policy link will point to the revised text.
+      The App asks for no Google Drive permission at all, so it cannot reach a technician’s personal Drive.
     </p>
 
-    <h2>8. Children</h2>
+    <h2>7. What the store holds, and what it does not</h2>
+    <p>The Workshop Store holds, for the workshop it belongs to:</p>
+    <ul>
+      <li>the Job and Capture records of the evidence the workshop captured, and the Capture files themselves — its warranty evidence;</li>
+      <li>the workshop’s shared settings — the models, recalls and quality choices section 3 lists;</li>
+      <li>the membership list: a Google ID and the owner’s label for each person;</li>
+      <li>sign-in sessions, keyed on a hash of each token.</li>
+    </ul>
+    <p>The store does not hold, beyond what the workshop put there:</p>
+    <ul>
+      <li>payment card details — the App sells nothing and takes no payment;</li>
+      <li>advertising identifiers, usage analytics, or any profile of what you capture;</li>
+      <li>who added a Job or a Capture;</li>
+      <li>biometric templates, which never leave the device OS;</li>
+      <li>anything from a technician’s personal Google Drive.</li>
+    </ul>
+    <p>
+      Nothing in the store is sold. It is held by Cloudflare, which runs the store and its storage, and by Google, for sign-in and for the workshop’s Drive copy — the two providers named in this policy — and no one else is given access to it.
+    </p>
+    <p>
+      <strong>Deleting evidence.</strong> Deleting a Job in the App removes its Job record and its Capture records from the store, in one transaction; deleting a single Capture removes that record. The App can no longer reach the evidence once its record is gone. A file already written into the workshop’s storage is not erased from it, and a copy already written into the workshop’s Drive stays there until it is removed — that Drive is readable by hand, so tidying it is the workshop’s own.
+    </p>
+
+    <h2>8. If you leave the workshop</h2>
+    <p>
+      The owner removes a technician by deleting their membership row and the sessions it opened. The membership row stops the next sign-in, and deleting the sessions ends the phones already signed in — at their next request, not at the end of the thirty days. Either way the phone keeps its queued work.
+    </p>
+    <ul>
+      <li><strong>You keep</strong> the Jobs and Captures stored on your own phone, and the App keeps working in local mode: capture, organise, export, and submit through the share sheet.</li>
+      <li><strong>You keep</strong> the Google account you signed in with. It was never a WarrantyCam account, and nothing about it changes.</li>
+      <li><strong>You keep</strong> the Google Drive tree from before the workshop moved to the store, if it sat in your own Drive. It was left where it was, and nothing deleted it.</li>
+      <li><strong>You lose</strong> the workshop’s Jobs and Captures, including the ones you added. They are the workshop’s claim evidence: removing you does not delete them, and access to them goes.</li>
+      <li><strong>You lose</strong> the workshop’s Drive copy. It belongs to the workshop’s Drive account, not yours, and the App will not open it for you.</li>
+    </ul>
+    <p>
+      Work already queued on the phone is kept and stops being sent rather than being thrown away. If the owner adds you back and you sign in again, it drains.
+    </p>
+
+    <h2>9. Children</h2>
     <p>
       WarrantyCam is intended for adult workshop / technician use. It is not directed at children.
     </p>
 
-    <h2>9. International use</h2>
+    <h2>10. International use</h2>
     <p>
-      Data you store on-device stays on that device. Data you sync to Google Drive (or share via the system share sheet) is processed under the locations and policies of those services and of the recipients you choose.
+      Data on your device stays on that device until it is uploaded or shared. The Workshop Store and its storage are run by Cloudflare, and sign-in and the workshop’s Drive copy go through Google; the data they hold is processed in those providers’ locations under those providers’ own terms. Evidence you share goes to whoever you chose in the share sheet.
     </p>
 
-    <h2>10. Changes</h2>
+    <h2>11. Changes</h2>
     <p>
-      We may update this policy as the App evolves. The effective date at the top will change when we do. Continued use of the App after an update means you accept the revised policy.
+      We may update this policy as the App evolves. The effective date at the top changes when we do, and a change in where evidence lives lands with the policy that says so, first: this revision describes evidence in the Workshop Store and the workshop’s Drive, and it goes live before any release that stops using a technician’s Drive. Continued use of the App after an update means you accept the revised policy.
     </p>
 
-    <h2>11. Contact</h2>
+    <h2>12. Contact</h2>
     <p>
       Privacy questions: <a href="mailto:support@warrantycam.com">support@warrantycam.com</a>
     </p>

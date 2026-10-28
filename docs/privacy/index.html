@@ -69,7 +69,7 @@
   <main>
     <header>
       <h1>WarrantyCam Privacy Policy</h1>
-      <p class="meta">Effective date: 26 October 2026 · App package: <code>com.warrantycam</code></p>
+      <p class="meta">Effective date: 28 October 2026 · App package: <code>com.warrantycam</code></p>
     </header>
 
     <div class="callout">
@@ -116,10 +116,13 @@
 
     <h2>4. Signing in, and who may open the workshop</h2>
     <p>
-      Google sign-in is the only door. The App sends the Google identity it receives to the store, which checks it and then checks it against the workshop’s membership list — one row per person, a Google ID and a label only the owner reads. The store holds no WarrantyCam account, no password and no email address for you. It keeps its own session instead: thirty days, sliding as you use it, with only a hash of the token stored. Signing out ends it. If the owner removes your membership, your next sign-in is refused; deleting the sessions that membership had opened ends the phones already signed in with them.
+      Google sign-in is the only door. The App sends the Google identity it receives to the store, which checks it and then checks it against the workshop’s membership list — one row per person, a Google ID and a name only the owner reads. The store holds no WarrantyCam account, no password and no email address for you. It keeps its own session instead: thirty days, sliding as you use it, with only a hash of the token stored. Signing out ends it. If the owner removes your membership, your next sign-in is refused; deleting the sessions that membership had opened ends the phones already signed in with them.
     </p>
     <p>
-      If the workshop has not added you, the App is refused and shows your own Google ID so the owner can paste it into a row. The Web Companion in the browser uses the same door.
+      If the workshop has not added you, the App is refused and shows your own Google ID. Under that refusal is one button, <strong>Ask the owner to add me</strong>: it hands the same Google sign-in back to the store and asks it to keep a <strong>Join Request</strong> — which account is asking, the name Google gives for it, and when it last asked. Asking again refreshes that one request rather than adding a second. A request is not a membership and it opens no session: the App still cannot open the workshop until the owner decides.
+    </p>
+    <p>
+      The owner answers the requests from the Membership page of the Web Companion, behind the same Google door. Admitting an account writes its membership row, and that row is what lets its next sign-in open the workshop. Declining removes the request and keeps no record of it, so a declined account is free to ask again.
     </p>
     <p>
       No Job and no Capture records who added it. Membership decides who may open the workshop; it is not an audit trail, and there is no owner column to search.
@@ -150,7 +153,8 @@
     <ul>
       <li>the Job and Capture records of the evidence the workshop captured, and the Capture files themselves — its warranty evidence;</li>
       <li>the workshop’s shared settings — the models, recalls and quality choices section 3 lists;</li>
-      <li>the membership list: a Google ID and the owner’s label for each person;</li>
+      <li>the membership list: a Google ID and a name for each person, which only the owner reads;</li>
+      <li>the Join Requests waiting for the owner: for each, the Google ID the store verified, the name Google gives for that account, and when that account last asked — each held until the owner admits or declines it;</li>
       <li>sign-in sessions, keyed on a hash of each token.</li>
     </ul>
     <p>The store does not hold, beyond what the workshop put there:</p>
@@ -158,6 +162,7 @@
       <li>payment card details — the App sells nothing and takes no payment;</li>
       <li>advertising identifiers, usage analytics, or any profile of what you capture;</li>
       <li>who added a Job or a Capture;</li>
+      <li>an email address — the Google sign-in carries one and the store does not keep it, for a member or for a request: the ID is what the door checks, and the name is what the owner reads;</li>
       <li>biometric templates, which never leave the device OS;</li>
       <li>anything from a technician’s personal Google Drive.</li>
     </ul>
@@ -195,7 +200,7 @@
 
     <h2>11. Changes</h2>
     <p>
-      We may update this policy as the App evolves. The effective date at the top changes when we do, and a change in where evidence lives lands with the policy that says so, first: this revision describes evidence in the Workshop Store and the workshop’s Drive, and it goes live before any release that stops using a technician’s Drive. Continued use of the App after an update means you accept the revised policy.
+      We may update this policy as the App evolves. The effective date at the top changes when we do, and a change in where evidence lives lands with the policy that says so, first: this revision describes evidence in the Workshop Store and the workshop’s Drive, and it goes live before any release that stops using a technician’s Drive. It also says how a technician asks to join and what a request waiting for the owner holds. Continued use of the App after an update means you accept the revised policy.
     </p>
 
     <h2>12. Contact</h2>

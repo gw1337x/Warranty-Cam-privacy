@@ -116,7 +116,7 @@
 
     <h2>4. Signing in, and who may open the workshop</h2>
     <p>
-      Google sign-in is the only door. The App sends the Google identity it receives to the store, which checks it and then checks it against the workshop’s membership list — one row per person, a Google ID and a name only the owner reads. The store holds no WarrantyCam account, no password and no email address for you. It keeps its own session instead: thirty days, sliding as you use it, with only a hash of the token stored. Signing out ends it. If the owner removes your membership, your next sign-in is refused; deleting the sessions that membership had opened ends the phones already signed in with them.
+      Google sign-in is the only door. The App sends the Google identity it receives to the store, which checks it and then checks it against the workshop’s membership list — one row per person, a Google ID and a name only the owner reads. The store holds no WarrantyCam account, no password and no email address for you. It keeps its own session instead: thirty days, sliding as you use it, with only a hash of the token stored. Signing out ends it. If the owner removes your membership, your next sign-in is refused, and the sessions that membership had opened end in the same act — so a phone already signed in is refused at its next request, not at the end of the thirty days.
     </p>
     <p>
       If the workshop has not added you, the App is refused and shows your own Google ID. Under that refusal is one button, <strong>Ask the owner to add me</strong>: it hands the same Google sign-in back to the store and asks it to keep a <strong>Join Request</strong> — which account is asking, the name Google gives for it, and when it last asked. Asking again refreshes that one request rather than adding a second. A request is not a membership and it opens no session: the App still cannot open the workshop until the owner decides.
@@ -175,7 +175,7 @@
 
     <h2>8. If you leave the workshop</h2>
     <p>
-      The owner removes a technician by deleting their membership row and the sessions it opened. The membership row stops the next sign-in, and deleting the sessions ends the phones already signed in — at their next request, not at the end of the thirty days. Either way the phone keeps its queued work.
+      The owner removes a technician from the Membership page of the Web Companion, in one act: it deletes their membership row and the sessions that membership had opened. The row stops the next sign-in, and ending the sessions closes the phones already signed in — at their next request, not at the end of the thirty days. Either way the phone keeps its queued work.
     </p>
     <ul>
       <li><strong>You keep</strong> the Jobs and Captures stored on your own phone, and the App keeps working in local mode: capture, organise, export, and submit through the share sheet.</li>
@@ -185,7 +185,7 @@
       <li><strong>You lose</strong> the workshop’s Drive copy. It belongs to the workshop’s Drive account, not yours, and the App will not open it for you.</li>
     </ul>
     <p>
-      Work already queued on the phone is kept and stops being sent rather than being thrown away. If the owner adds you back and you sign in again, it drains.
+      Work already queued on the phone is kept rather than thrown away: the workshop stops accepting it, so it waits on the phone instead of landing, and nothing is deleted. If the owner adds you back and you sign in again, it drains.
     </p>
 
     <h2>9. Children</h2>
@@ -200,7 +200,7 @@
 
     <h2>11. Changes</h2>
     <p>
-      We may update this policy as the App evolves. The effective date at the top changes when we do, and a change in where evidence lives lands with the policy that says so, first: this revision describes evidence in the Workshop Store and the workshop’s Drive, and it goes live before any release that stops using a technician’s Drive. It also says how a technician asks to join and what a request waiting for the owner holds. Continued use of the App after an update means you accept the revised policy.
+      We may update this policy as the App evolves. The effective date at the top changes when we do, and a change in where evidence lives lands with the policy that says so, first: this revision describes evidence in the Workshop Store and the workshop’s Drive, and it goes live before any release that stops using a technician’s Drive. It also says how a technician asks to join, what a request waiting for the owner holds, and what removing a member does to the phones already signed in — one act from the owner’s page, which is the act the page now offers. Continued use of the App after an update means you accept the revised policy.
     </p>
 
     <h2>12. Contact</h2>

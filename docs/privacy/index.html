@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>WarrantyCam Privacy Policy</title>
-  <meta name="description" content="Privacy policy for WarrantyCam: a workshop's job and capture evidence is held in the Workshop Store the developer runs for the workshop, copied into the workshop's own Google Drive, with Google sign-in as the only identity.">
+  <meta name="description" content="Privacy policy for WarrantyCam: a workshop's job and capture evidence is held in the Workshop Store the developer runs for the workshop, with Google sign-in as the only identity.">
   <style>
     :root {
       --ink: #1a1f24;
@@ -73,12 +73,12 @@
     </header>
 
     <div class="callout">
-      <strong>Core posture:</strong> a workshop’s warranty evidence is held in the <strong>Workshop Store</strong> — the server the developer runs for the workshop — and the server writes a copy into the workshop’s own Google Drive. It is no longer written into a technician’s personal Drive, and <strong>Google sign-in is the only identity</strong>: the App has no account of its own, and no Job or Capture records who added it.
+      <strong>Core posture:</strong> a workshop’s warranty evidence is held in the <strong>Workshop Store</strong> — the server the developer runs for the workshop — and the store is the only copy: nothing is written into a Google Drive, a technician’s personal one or the workshop’s own. <strong>Google sign-in is the only identity</strong>: the App has no account of its own, and no Job or Capture records who added it.
     </div>
 
     <h2>1. Who we are</h2>
     <p>
-      WarrantyCam (“the App”) is an Android application for workshop technicians to capture, organise, and share warranty evidence for a Job (keyed by WIP). This policy explains what the App handles on your device, what the Workshop Store and the workshop’s Drive hold, who may open the workshop, and what the developer does <em>not</em> collect.
+      WarrantyCam (“the App”) is an Android application for workshop technicians to capture, organise, and share warranty evidence for a Job (keyed by WIP). This policy explains what the App handles on your device, what the Workshop Store holds, who may open the workshop, and what the developer does <em>not</em> collect.
     </p>
     <p>
       Contact: <a href="mailto:support@warrantycam.com">support@warrantycam.com</a>
@@ -95,7 +95,7 @@
       <li><strong>Optional biometric lock preference</strong> — a local on/off setting only. Biometric templates stay in the device OS; the App does not upload fingerprints, face data, or lock credentials.</li>
     </ul>
     <p>
-      You can delete Jobs and Captures in the App. Uninstalling the App removes local App data on that device; what the workshop’s store and the workshop’s Drive hold belongs to the workshop, and is described below.
+      You can delete Jobs and Captures in the App. Uninstalling the App removes local App data on that device; what the workshop’s store holds belongs to the workshop, and is described below.
     </p>
 
     <h2>3. Where the workshop’s evidence lives</h2>
@@ -103,16 +103,13 @@
       Cloud Sync writes a Job and its Captures to the <strong>Workshop Store</strong>: one server, with a database for Job and Capture records, the workshop’s settings, the membership list and sign-in sessions, and object storage for the Capture files themselves. Evidence bytes go from the phone straight to that storage over an upload link minted for one file, and are read back through a signed link that expires shortly after it is minted — so a link copied out of the App stops working soon after. The Web Companion reads the same store, which is how a claim can be checked at a desk.
     </p>
     <p>
-      Behind the store, the server also writes a copy of each Capture and of each Job’s details into <strong>the workshop’s own Google Drive</strong>. That copy is written after the store has accepted the evidence, never inside the request that asked for it, and no client of the App reads it back: it exists so the workshop’s Drive keeps a copy that can be opened by hand, and so a Drive link keeps working. The copy can lag behind the store, and it is a copy rather than a backup.
+      The store is the only copy of that evidence: nothing is written from it into another service, and no other copy is kept.
     </p>
     <ul>
       <li><strong>Local Only</strong> — evidence can stay on the device with no sign-in at all: the App captures, organises and exports with no signal and no server. Work kept on the device while signed out drains to the workshop once you sign in.</li>
       <li><strong>Storage Destination</strong> — Cloud Only, Local Only, or Both controls whether files remain on the device after upload (independent of files that already live on a diagnostic tablet).</li>
       <li><strong>Workshop settings</strong> — custom models, generation codes, disabled models, saved recalls, and photo and video quality are the workshop’s: held once in the store and shared by everyone signed in, so a new phone gets them back and two phones are not configuring two different workshops.</li>
     </ul>
-    <p>
-      The workshop’s use of Google Drive is also governed by Google’s own terms and privacy policy.
-    </p>
 
     <h2>4. Signing in, and who may open the workshop</h2>
     <p>
@@ -131,9 +128,6 @@
     <h2>5. Sharing and Warranty Hub Submission</h2>
     <p>
       When you use Warranty Hub Submission or another share action, the App opens the Android system share sheet with your Evidence Package and a short WIP/registration summary. You choose the destination (for example Microsoft Teams or email). The developer does not stand between you and that handoff.
-    </p>
-    <p>
-      Drive Link Share copies or sends the URL of the Job’s folder in the workshop’s Drive. That folder was written by the server; who may open the link is decided by that Drive’s sharing settings, not by WarrantyCam.
     </p>
 
     <h2>6. Permissions the App may request</h2>
@@ -167,10 +161,10 @@
       <li>anything from a technician’s personal Google Drive.</li>
     </ul>
     <p>
-      Nothing in the store is sold. It is held by Cloudflare, which runs the store and its storage, and by Google, for sign-in and for the workshop’s Drive copy — the two providers named in this policy — and no one else is given access to it.
+      Nothing in the store is sold. It is held by Cloudflare, which runs the store and its storage, and sign-in is checked by Google — the two providers named in this policy — and no one else is given access to it.
     </p>
     <p>
-      <strong>Deleting evidence.</strong> Deleting a Job in the App removes its Job record and its Capture records from the store, in one transaction; deleting a single Capture removes that record. The App can no longer reach the evidence once its record is gone. A file already written into the workshop’s storage is not erased from it, and a copy already written into the workshop’s Drive stays there until it is removed — that Drive is readable by hand, so tidying it is the workshop’s own.
+      <strong>Deleting evidence.</strong> Deleting a Job in the App removes its Job record and its Capture records from the store, in one transaction; deleting a single Capture removes that record. The App can no longer reach the evidence once its record is gone. A file already written into the workshop’s storage is not erased from it.
     </p>
 
     <h2>8. If you leave the workshop</h2>
@@ -182,7 +176,6 @@
       <li><strong>You keep</strong> the Google account you signed in with. It was never a WarrantyCam account, and nothing about it changes.</li>
       <li><strong>You keep</strong> the Google Drive tree from before the workshop moved to the store, if it sat in your own Drive. It was left where it was, and nothing deleted it.</li>
       <li><strong>You lose</strong> the workshop’s Jobs and Captures, including the ones you added. They are the workshop’s claim evidence: removing you does not delete them, and access to them goes.</li>
-      <li><strong>You lose</strong> the workshop’s Drive copy. It belongs to the workshop’s Drive account, not yours, and the App will not open it for you.</li>
     </ul>
     <p>
       Work already queued on the phone is kept rather than thrown away: the workshop stops accepting it, so it waits on the phone instead of landing, and nothing is deleted. If the owner adds you back and you sign in again, it drains.
@@ -195,12 +188,12 @@
 
     <h2>10. International use</h2>
     <p>
-      Data on your device stays on that device until it is uploaded or shared. The Workshop Store and its storage are run by Cloudflare, and sign-in and the workshop’s Drive copy go through Google; the data they hold is processed in those providers’ locations under those providers’ own terms. Evidence you share goes to whoever you chose in the share sheet.
+      Data on your device stays on that device until it is uploaded or shared. The Workshop Store and its storage are run by Cloudflare, and sign-in goes through Google; the data they hold is processed in those providers’ locations under those providers’ own terms. Evidence you share goes to whoever you chose in the share sheet.
     </p>
 
     <h2>11. Changes</h2>
     <p>
-      We may update this policy as the App evolves. The effective date at the top changes when we do, and a change in where evidence lives lands with the policy that says so, first: this revision describes evidence in the Workshop Store and the workshop’s Drive, and it goes live before any release that stops using a technician’s Drive. It also says how a technician asks to join, what a request waiting for the owner holds, and what removing a member does to the phones already signed in — one act from the owner’s page, which is the act the page now offers. Continued use of the App after an update means you accept the revised policy.
+      We may update this policy as the App evolves. The effective date at the top changes when we do, and a change in where evidence lives lands with the policy that says so, first: this revision describes evidence in the Workshop Store alone, and it goes live before any release that writes evidence anywhere else. It also says how a technician asks to join, what a request waiting for the owner holds, and what removing a member does to the phones already signed in — one act from the owner’s page, which is the act the page now offers. Continued use of the App after an update means you accept the revised policy.
     </p>
 
     <h2>12. Contact</h2>
